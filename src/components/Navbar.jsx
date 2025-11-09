@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react"
 import { HiOutlineMenuAlt3, HiOutlineX } from "react-icons/hi"
+import imgLogo from "../assets/fav-icon.png"
 
 const Navbar = () => {
 
@@ -32,7 +33,7 @@ const Navbar = () => {
                               {/*logo section */}
                               <div className="flex gap-x-2 items-center">
                                    <a href="/">
-                                        <img src="https://placehold.co/400" className="h-10 rounded-lg" />
+                                        <img src={imgLogo} className="h-10 rounded-lg" />
                                    </a>
                                    <h3 className="font-bold">Positivus</h3>
                               </div>
@@ -68,7 +69,7 @@ const Navbar = () => {
                                          {
                                              menuItems.map((item, index) => (
                                                   <a onClick={()=>setActiveItem(item.name)} 
-                                                  className={`block text-black px-2 hover:bg-primary rounded-sm hover:underline underline-offset-4 transition-all duration-200 ${activeItem===item.name ? 'text-primary bg-black underline underline-offset-4': ''}`} 
+                                                  className={`block text-black px-2 hover:bg-primary rounded-sm hover:underline underline-offset-4 transition-all duration-200 ${activeItem===item.name ? 'text-primary': ''}`} 
                                                   key={index} href={item.href}>{item.name}</a>
                                              ))
                                         }

@@ -1,5 +1,6 @@
 import React from 'react'
 import bannerImg from "../assets/banner.png"
+import LogoCaraousel from './LogoCaraousel'
 
 const Hero = () => {
   return (
@@ -20,10 +21,10 @@ const Hero = () => {
                          <img src={bannerImg} alt="banner-img" className='w-full h-auto rounded-md'></img>
                     </div>
                </div>
-          </div>
 
-          {/* brand logo */}
-          
+               {/* brand logo */}
+               <LogoCaraousel />
+          </div>
      </section>
   )
 }
