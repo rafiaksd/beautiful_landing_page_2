@@ -3,6 +3,8 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Services from './components/Services'
 import CTA from './components/CTA'
+import CastStudies from './components/CastStudies'
+import WorkingProcess from './components/WorkingProcess'
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
           <Hero />
           <Services />
           <CTA />
+          <CastStudies />
+          <WorkingProcess />
       </div> 
     </>
   )

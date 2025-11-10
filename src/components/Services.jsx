@@ -1,5 +1,5 @@
 import React from 'react'
-import { servicesData } from '../utilities/servicesData'
+import { servicesData } from '../utilities/services'
 import LinkIcon from "../assets/link-icon.png"
 
 const Services = () => {
