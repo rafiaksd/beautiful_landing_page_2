@@ -5,6 +5,7 @@ import Services from './components/Services'
 import CTA from './components/CTA'
 import CastStudies from './components/CastStudies'
 import WorkingProcess from './components/WorkingProcess'
+import Team  from './components/Team'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <CTA />
           <CastStudies />
           <WorkingProcess />
+          <Team />
       </div> 
     </>
   )
