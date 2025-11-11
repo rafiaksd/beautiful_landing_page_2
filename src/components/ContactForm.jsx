@@ -3,10 +3,10 @@ import contactGraphic from "../assets/contact.png"; // replace with your decorat
 
 const ContactForm = () => {
   return (
-    <section id="contact" className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="pt-12 bg-white mx-4">
+      <div className="max-w-7xl mx-auto border-black border-4 rounded-2xl">
         {/* Headline Section */}
-        <div className="flex flex-col md:flex-row gap-4 mb-12 md:w-2/3">
+        <div className="flex flex-col md:flex-row gap-4 p-8 md:w-2/3">
           <div className="shrink-0 bg-primary text-black py-2 px-16 rounded-md">
             <h2 className="text-2xl font-bold">Contact Us</h2>
           </div>
@@ -17,8 +17,10 @@ const ContactForm = () => {
           </div>
         </div>
 
+        <hr className="border-t-2 border-gray-500 max-w-full mx-8 md:mb-4" />
+
         {/* Main Form Container */}
-        <div className="bg-linear-to-b from-gray-50 to-primary border border-primary rounded-xl shadow-lg relative overflow-hidden">
+        <div className="bg-linear-to-b from-gray-50 to-primary rounded-xl shadow-lg relative overflow-hidden">
 
           <div className="grid md:grid-cols-2">
             {/* Left side: Form */}
@@ -32,15 +34,16 @@ const ContactForm = () => {
                     defaultChecked
                     className="accent-primary"
                   />
-                  <span className="text-gray-700 font-bold text-xl">Say Hi</span>
+                  <span className="text-gray-700 font-bold text-xl">Get a Quote</span>
                 </label>
 
                 <label className="flex items-center gap-2 cursor-pointer">
                   <input type="radio" name="contactType" className="accent-primary" />
-                  <span className="text-gray-700 font-bold text-xl">Get a Quote</span>
+                  <span className="text-gray-700 font-bold text-xl">Say Hi</span>
                 </label>
               </div>
 
+               {/* Name, Email. Message */}
               <form className="space-y-6">
                 {/* Name */}
                 <div>
@@ -86,7 +89,7 @@ const ContactForm = () => {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="mt-2 inline-block px-6 py-3 bg-black text-white font-semibold rounded-md hover:bg-primary hover:text-black transition-all duration-150"
+                  className="mt-2 inline-block px-6 py-3 bg-black text-white font-semibold rounded-md hover:bg-primary hover:text-black transition-all duration-150 cursor-pointer"
                 >
                   Send Message
                 </button>
@@ -94,11 +97,11 @@ const ContactForm = () => {
             </div>
 
             {/* Right side: Graphic */}
-            <div className="hidden md:flex justify-center items-center relative">
+            <div className="hidden md:flex items-center relative">
               <img
                 src={contactGraphic}
                 alt="Decorative graphic"
-                className="absolute right-10 w-[60%] object-contain"
+                className="absolute right-10 w-[60%] object-contain max-h-[95%]"
               />
             </div>
           </div>

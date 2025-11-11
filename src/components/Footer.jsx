@@ -1,9 +1,12 @@
 import React from "react";
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
+   
+  const icons_array = [FaYoutube, FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn];
+
   return (
-    <footer className="bg-gradient-to-b from-gray-900 via-black to-black py-12 mt-24 border-t border-gray-800">
+    <footer className="bg-linear-to-b from-gray-900 via-black to-black py-12 mt-16 border-t border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top section: logo + nav + socials */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-8 pb-8 border-b border-gray-800">
@@ -26,7 +29,7 @@ const Footer = () => {
 
           {/* Social icons */}
           <div className="flex justify-center gap-4 text-white">
-            {[FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn].map((Icon, idx) => (
+            {icons_array.map((Icon, idx) => (
               <a
                 key={idx}
                 href="#"
