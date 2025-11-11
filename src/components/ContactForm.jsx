@@ -63,7 +63,7 @@ const ContactForm = () => {
                   <input
                     id="email"
                     type="email"
-                    placeholder="Enter your email address"
+                    placeholder="Enter email..."
                     required
                     className="w-full border border-gray-500 rounded-md px-4 py-3 text-gray-800 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-primary"
                   />
@@ -76,7 +76,7 @@ const ContactForm = () => {
                   </label>
                   <textarea
                     id="message"
-                    placeholder="Enter your message..."
+                    placeholder="Enter message..."
                     rows="5"
                     required
                     className="w-full border border-gray-500 rounded-md px-4 py-3 text-gray-800 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-primary resize-none"
