@@ -8,6 +8,7 @@ import WorkingProcess from './components/WorkingProcess'
 import Team  from './components/Team'
 import Testimonials from './components/Testimonials'
 import Footer from './components/Footer'
+import ContactForm from './components/ContactForm'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <WorkingProcess />
           <Team />
           <Testimonials />
+          <ContactForm />
           <Footer />
       </div> 
     </>
