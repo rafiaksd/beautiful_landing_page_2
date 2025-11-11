@@ -7,6 +7,7 @@ import CastStudies from './components/CastStudies'
 import WorkingProcess from './components/WorkingProcess'
 import Team  from './components/Team'
 import Testimonials from './components/Testimonials'
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <WorkingProcess />
           <Team />
           <Testimonials />
+          <Footer />
       </div> 
     </>
   )
