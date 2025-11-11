@@ -4,6 +4,7 @@ import { BsChatQuote } from 'react-icons/bs'
 import testimonialsData from '../utilities/testimonialsData'
 import { IoArrowBack } from 'react-icons/io5'
 import { IoMdArrowForward } from 'react-icons/io'
+import {motion} from "framer-motion"
 
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -13,7 +14,7 @@ const Testimonials = () => {
   useEffect(()=>{
     const interval = setInterval(()=>{
       handleNext()
-    }, 2000);
+    }, 5000);
 
     return () => clearInterval(interval)
   },[currentIndex])
@@ -64,32 +65,40 @@ const Testimonials = () => {
             <div className='flex flex-col md:flex-row max-w-7xl mx-auto overflow-hidden gap-3'>
               {
                 testimonialsData.slice(currentIndex,currentIndex+itemsToShow).map((testimonial, index) => (
-                  <div key={index} className='w-full relative py-5 md:max-w-md px-2'>
+                  // use framer motion here
+                  <motion.div  key={`${index}-${currentIndex}`} // force re-mount on slide change
+                  initial={{opacity:0, x:50}} animate = {{opacity:1, x:0}} exit = {{opacity:0, x:-50}} transition={{ duration: 0.2 }} 
+                  className='w-full relative py-5 md:max-w-md px-2'>
                     <div className='absolute top-0 left-0 z-30'>
                       <BsChatQuote className='size-8' />
                     </div>
                     <div className='h-48 bg-white hover:bg-primary rounded-lg border border-gray-300 hover:border-primary shadow-lg p-6 cursor-pointer transition-all duration-300'>
                         <p className='text-base font-medium mb-4'>{testimonial.text}</p>
-                        <p className='text-sm font-semibold text-gray-700'>{testimonial.author}</p>
+                        <p className='text-sm font-semibold text-gray-700 italic'>{testimonial.author}</p>
                     </div>
-                  </div>
+                  </motion.div>
                 ))
               }
             </div>
 
             {/* dot navigation */}
             <div className='absolute mt-5 left-1/2 transform -translate-x-1/2 flex items-center space-x-5 z-10'>
-              <button className='text-black'>
+              <button className='text-black' onClick={handlePrevious}>
                 <IoArrowBack/>
               </button>
 
               {/* dots */}
-              <div>
-                dots
+              <div className='flex space-x-2'>
+                {
+                  testimonialsData.map((_,index)=>(
+                    <button key={index} className={`w-3 h-3 rounded-full ${index>= currentIndex && index < currentIndex + itemsToShow ? "bg-primary" : "bg-gray-400"}`} 
+                    onClick={()=>handleDotClick(index)} />
+                  ))
+                }
               </div>
 
               {/* next button */}
-              <button>
+              <button onClick={handleNext}>
                 <IoMdArrowForward className='text-black' />
               </button>
 
