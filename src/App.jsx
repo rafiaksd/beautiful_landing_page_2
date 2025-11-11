@@ -6,6 +6,7 @@ import CTA from './components/CTA'
 import CastStudies from './components/CastStudies'
 import WorkingProcess from './components/WorkingProcess'
 import Team  from './components/Team'
+import Testimonials from './components/Testimonials'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <CastStudies />
           <WorkingProcess />
           <Team />
+          <Testimonials />
       </div> 
     </>
   )
